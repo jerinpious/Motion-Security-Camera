@@ -11,10 +11,9 @@ while True:
     _,thresh=cv2.threshold(gray,20,255,cv2.THRESH_BINARY)
     contours,_=cv2.findContours(thresh,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
     for c in contours:
-        if cv2.contourArea(c)<5000:
+        if cv2.contourArea(c)<500:
             continue
         winsound.Beep(500,100)
-
     cv2.imshow("Security Camera",thresh)
     if cv2.waitKey(10)==27:
         break
