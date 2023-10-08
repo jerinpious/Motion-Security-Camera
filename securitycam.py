@@ -11,10 +11,11 @@ while True:
     _,thresh=cv2.threshold(gray,20,255,cv2.THRESH_BINARY)
     contours,_=cv2.findContours(thresh,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
     for c in contours:
-        if cv2.contourArea(c)<500:
+        if cv2.contourArea(c)<5000:
             continue
+        print("Motion detected")
         winsound.Beep(500,100)
-    cv2.imshow("Security Camera",thresh)
+    cv2.imshow("Security Camera",img1)
     if cv2.waitKey(10)==27:
         break
 webcam.release()
