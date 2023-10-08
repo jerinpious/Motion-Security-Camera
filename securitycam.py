@@ -15,7 +15,7 @@ while True:
             continue
         print("Motion detected")
         winsound.Beep(500,100)
-    cv2.imshow("Security Camera",img1)
+    cv2.imshow("Security Camera",thresh)
     if cv2.waitKey(10)==27:
         break
 webcam.release()
