@@ -14,6 +14,8 @@ while True:
         if cv2.contourArea(c)<5000:
             continue
         print("Motion detected")
+        i="0"
+        cv2.imwrite('motion.png',img1)
         winsound.Beep(500,100)
     cv2.imshow("Security Camera",thresh)
     if cv2.waitKey(10)==27:
